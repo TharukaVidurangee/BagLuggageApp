@@ -6,4 +6,15 @@
     <string name="password">Password</string>
     <string name="placeholder"> </string>
     <string name="login">Login</string>
+    <string-array name="room_numbers" >
+        <item>Room No 101</item>
+        <item>Room No 102</item>
+        <item>Room No 103</item>
+        <item>Room No 201</item>
+        <item>Room No 202</item>
+        <item>Room No 203</item>
+        <item>Room No 301</item>
+        <item>Room No 302</item>
+        <item>Room No 303</item>
+    </string-array>
 </resources>
