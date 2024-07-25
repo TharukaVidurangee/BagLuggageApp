@@ -13,7 +13,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="@string/app_name"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.489"
         app:srcCompat="@drawable/splash_screen_1" />
 
     <EditText
@@ -22,11 +24,11 @@
         android:layout_height="54dp"
         android:layout_marginBottom="20dp"
         android:ems="40"
-        android:fontFamily="@font/cambo"
+        android:fontFamily="@font/adamina"
         android:inputType="text"
-        android:text="AeroLuggage"
+        android:text="@string/app_name"
         android:textColor="@color/white"
-        android:textSize="30dp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.565"
@@ -40,6 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="28dp"
+        android:contentDescription="@string/Logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/logo" />
@@ -49,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
-        android:text="---------------------------------------------------------------------------------------------------------"
+        android:text="@string/bottom_line"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

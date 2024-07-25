@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">AeroLuggage</string>
+    <string name="bottom_line">---------------------------------------------------------------------------------------------------------</string>
+    <string name="Logo">Airlines Logo</string>
+    <string name="id">Staff ID</string>
+    <string name="password">Password</string>
+    <string name="placeholder"> </string>
+    <string name="login">Login</string>
 </resources>
