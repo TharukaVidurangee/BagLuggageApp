@@ -14,12 +14,12 @@
         app:srcCompat="@drawable/select_room"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="-40dp"
-        tools:layout_editor_absoluteY="-55dp" />
+        tools:layout_editor_absoluteY="-51dp" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="340dp"
-        android:layout_height="60dp"
+        android:layout_height="80dp"
         android:backgroundTint="@color/orange"
         android:shadowColor="#D35F11"
         android:text="Scan Room"
@@ -34,15 +34,13 @@
 
     <Spinner
         android:id="@+id/spinner"
-        android:background="@drawable/rectangle"
         android:layout_width="340dp"
         android:layout_height="60dp"
+        android:background="@drawable/rectangle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="80dp" />
-
-
+        tools:layout_editor_absoluteY="80dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView2"
