@@ -16,6 +16,9 @@
             android:name=".room_Select"
             android:exported="false" />
         <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginScreen"
             android:exported="false" />
         <activity

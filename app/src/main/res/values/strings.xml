@@ -6,6 +6,12 @@
     <string name="password">Password</string>
     <string name="placeholder"> </string>
     <string name="login">Login</string>
+
+    <string name="history">History</string>
+    <string name="info">App Info</string>
+    <string name="settings">Settings</string>
+    <string name="logout">Logout</string>
+
     <string-array name="room_numbers" >
         <item>Room No 101</item>
         <item>Room No 102</item>
