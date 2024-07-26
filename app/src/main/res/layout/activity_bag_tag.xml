@@ -5,13 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="513dp"
-        android:layout_height="828dp"
-        app:srcCompat="@drawable/bag_tag"
-        tools:layout_editor_absoluteX="-30dp"
-        tools:layout_editor_absoluteY="-80dp" />
+        android:layout_width="432dp"
+        android:layout_height="703dp"
+        android:layout_marginEnd="96dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.193"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bag_tag" />
 
     <Button
         android:id="@+id/button2"
@@ -27,35 +32,35 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="176dp" />
+        tools:layout_editor_absoluteY="160dp" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:srcCompat="@drawable/qr_scan"
-        tools:layout_editor_absoluteX="376dp"
-        tools:layout_editor_absoluteY="91dp"
+        tools:layout_editor_absoluteX="307dp"
+        tools:layout_editor_absoluteY="92dp"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bags in Room No 1"
-        android:textAlignment="viewStart"
+        android:text="Bag Tags in Room No 1"
         android:textSize="20dp"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="275dp"
+        tools:layout_editor_absoluteY="257dp"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/bottom_line"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="295dp"
+        tools:layout_editor_absoluteY="285dp"
         tools:ignore="MissingConstraints" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
