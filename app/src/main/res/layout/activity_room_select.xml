@@ -43,7 +43,7 @@
 
 
     <Spinner
-        android:id="@+id/spinCat"
+        android:id="@+id/spinner_room"
         android:layout_width="340dp"
         android:layout_height="60dp"
         android:layout_marginTop="84dp"

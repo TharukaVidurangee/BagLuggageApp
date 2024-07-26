@@ -11,7 +11,7 @@ class room_Select : AppCompatActivity() {
         setContentView(R.layout.activity_room_select)
 
         // Get reference to the Spinner
-        val spinner: Spinner = findViewById(R.id.spinner)
+        val spinner: Spinner = findViewById(R.id.spinner_room)
 
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter.createFromResource(
