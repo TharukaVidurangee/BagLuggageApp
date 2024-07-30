@@ -18,25 +18,6 @@
         app:layout_constraintVertical_bias="0.489"
         app:srcCompat="@drawable/splash_screen_1" />
 
-    <TextView
-        android:id="@+id/editTextText"
-        android:layout_width="206dp"
-        android:layout_height="54dp"
-        android:layout_marginBottom="20dp"
-        android:ems="40"
-        android:fontFamily="@font/adamina"
-        android:inputType="text"
-        android:text="@string/app_name"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.565"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.16"
-        tools:ignore="accessibility" />
-
     <ImageView
         android:id="@+id/imageView8"
         android:layout_width="wrap_content"
@@ -58,6 +39,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/app_logo"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="7dp"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
