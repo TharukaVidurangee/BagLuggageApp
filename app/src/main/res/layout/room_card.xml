@@ -1,15 +1,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="8dp">
-<!--    android:background="@drawable/card_background"-->
+    <!--    android:background="@drawable/card_background"-->
 
     <ImageView
         android:id="@+id/iconImageView1"
         android:layout_width="40dp"
         android:layout_height="match_parent"
-        android:src="@drawable/bag_sync" />
+        android:src="@drawable/room" />
 
     <LinearLayout
         android:layout_width="0dp"
@@ -22,36 +23,15 @@
             android:id="@+id/bagTagTextView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bag Tag"
+            android:text="Room Number"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tagIdTextView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="68344805679"
+            android:text="Tag Count: 123"
             android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/tagIdTextView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SQ123456"
-            android:textSize="14sp" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/dateTextView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:text="2024-07-09 10.00 am"
-                android:textSize="14sp" />
-        </RelativeLayout>
 
     </LinearLayout>
 </LinearLayout>
