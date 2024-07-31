@@ -17,23 +17,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/splash_screen_1" />
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="229dp"
+        android:layout_height="217dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/aeroluggage_logo"
-        tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="28dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="16dp" />
 
     <EditText
         android:id="@+id/editTextText2"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:layout_width="340dp"
         android:layout_height="60dp"
-        android:layout_marginBottom="296dp"
+        android:layout_marginBottom="292dp"
         android:background="@drawable/input_border"
         android:drawableStart="@drawable/ic_user"
         android:drawablePadding="16dp"
@@ -48,15 +50,14 @@
         android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextText3"
+        android:id="@+id/password"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:layout_width="340dp"
         android:layout_height="60dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/input_border"
         android:drawableStart="@drawable/baseline_lock_open_24"
         android:drawablePadding="16dp"
@@ -67,6 +68,7 @@
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
 
@@ -74,24 +76,27 @@
         android:id="@+id/loginButton"
         android:layout_width="340dp"
         android:layout_height="60dp"
+        android:layout_marginTop="32dp"
         android:backgroundTint="@color/orange"
         android:text="@string/login"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:cornerRadius="10dp"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="495dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password"
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/slaLogo"
         android:layout_width="283dp"
         android:layout_height="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginButton"
+        app:layout_constraintVertical_bias="0.864"
         app:srcCompat="@drawable/sla_logo"
-        tools:layout_editor_absoluteY="625dp"
         tools:ignore="MissingConstraints" />
 
     <ImageView
