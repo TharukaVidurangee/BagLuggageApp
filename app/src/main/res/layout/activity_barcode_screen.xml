@@ -11,73 +11,73 @@
         android:id="@+id/imageView"
         android:layout_width="491dp"
         android:layout_height="771dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/bag_tag"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-40dp"
-        tools:layout_editor_absoluteY="-42dp" />
-
-
-    <Spinner
-        android:id="@+id/spinner_room"
-        android:layout_width="352dp"
-        android:layout_height="51dp"
-        android:layout_weight="1"
-        android:entries="@array/room_numbers"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints,TouchTargetSizeCheck"
-        tools:layout_editor_absoluteY="70dp" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="321dp"
-        android:layout_height="42dp"
-        android:text="Scan Bag tag Here"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="152dp" />
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView13"
-        android:layout_width="365dp"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/input_border"
-        tools:layout_editor_absoluteY="60dp"
         tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView14"
-        android:layout_width="365dp"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView13"
         app:srcCompat="@drawable/input_border"
-        tools:layout_editor_absoluteY="133dp"
         tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Bag Tags in Room No 1"
-        android:textSize="20dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="237dp" />
+    <Spinner
+        android:id="@+id/spinner_room"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="19dp"
+        android:layout_weight="1"
+        android:entries="@array/room_numbers"
+        app:layout_constraintBottom_toTopOf="@+id/imageView14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.627"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView13"
+        tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/bottom_line"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="266dp" />
+
+    <EditText
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="5dp"
+        android:hint="Scan Bag tag Here"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView14"
+        tools:ignore="MissingConstraints" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

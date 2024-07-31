@@ -24,11 +24,12 @@
         android:id="@+id/imageView6"
         android:layout_width="229dp"
         android:layout_height="217dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView7"
         app:srcCompat="@drawable/aeroluggage_logo"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="16dp" />
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/editTextText2"
@@ -91,23 +92,22 @@
         android:id="@+id/slaLogo"
         android:layout_width="283dp"
         android:layout_height="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView10"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginButton"
-        app:layout_constraintVertical_bias="0.864"
         app:srcCompat="@drawable/sla_logo"
         tools:ignore="MissingConstraints" />
 
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="12dp"
+        android:background="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/line"
-        tools:layout_editor_absoluteY="668dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/slaLogo" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
