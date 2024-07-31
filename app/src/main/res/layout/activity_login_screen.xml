@@ -7,6 +7,7 @@
     android:background="@color/black"
     tools:context=".LoginScreen">
 
+
     <ImageView
         android:id="@+id/imageView7"
         android:layout_width="495dp"
@@ -18,90 +19,89 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/splash_screen_1" />
 
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/aeroluggage_logo"
+        tools:layout_editor_absoluteX="84dp"
+        tools:layout_editor_absoluteY="28dp"
+        tools:ignore="MissingConstraints" />
 
     <EditText
-        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:id="@+id/editTextText2"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:layout_width="340dp"
         android:layout_height="60dp"
-        android:layout_marginBottom="356dp"
+        android:layout_marginBottom="296dp"
+        android:background="@drawable/input_border"
         android:drawableStart="@drawable/ic_user"
-        android:ems="10"
-        android:inputType="text"
-        android:singleLine="true"
-        android:hint="@string/id"
-        android:textColorHint="@color/white"
-        android:textColor="@color/white"
         android:drawablePadding="16dp"
+        android:ems="10"
+        android:gravity="center_vertical"
+        android:hint="@string/id"
+        android:inputType="text"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
-        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/input_border"/>
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:id="@+id/editTextText3"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:layout_width="340dp"
         android:layout_height="60dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/input_border"
         android:drawableStart="@drawable/baseline_lock_open_24"
         android:drawablePadding="16dp"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="text"
         android:paddingStart="16dp"
         android:textColor="@color/white"
-        android:ems="10"
-        android:inputType="text"
-        android:hint="@string/password"
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2"
-        android:background="@drawable/input_border"/>
+        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
 
     <Button
         android:id="@+id/loginButton"
         android:layout_width="340dp"
         android:layout_height="60dp"
-        android:layout_marginTop="28dp"
         android:backgroundTint="@color/orange"
-        android:textSize="20sp"
         android:text="@string/login"
         android:textColor="@color/white"
+        android:textSize="20sp"
         app:cornerRadius="10dp"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="495dp"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="283dp"
+        android:layout_height="32dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
+        app:srcCompat="@drawable/sla_logo"
+        tools:layout_editor_absoluteY="625dp"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="29dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/logo" />
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        android:text="@string/bottom_line"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/app_logo"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="-9dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/line"
+        tools:layout_editor_absoluteY="668dp"
         tools:ignore="MissingConstraints" />
 
 

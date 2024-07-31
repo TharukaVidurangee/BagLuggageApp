@@ -13,10 +13,13 @@
         android:theme="@style/Theme.AeroLuggage"
         tools:targetApi="31">
         <activity
-            android:name=".room_Select"
+            android:name=".bag_history_screen"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".barcode_screen"
+            android:exported="false" />
+        <activity
+            android:name=".room_Select"
             android:exported="false" />
         <activity
             android:name=".LoginScreen"

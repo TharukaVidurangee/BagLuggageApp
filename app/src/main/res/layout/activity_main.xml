@@ -10,43 +10,44 @@
         android:id="@+id/imageView5"
         android:layout_width="453dp"
         android:layout_height="732dp"
+        android:contentDescription="@string/app_name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:contentDescription="@string/app_name"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.489"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/splash_screen_1" />
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="28dp"
-        android:contentDescription="@string/Logo"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="280dp"
+        android:layout_height="296dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/aeroluggage_logo"
+        tools:layout_editor_absoluteY="32dp"
+        tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        android:text="@string/bottom_line"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/imageView12"
+        android:layout_width="251dp"
+        android:layout_height="37dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/sla_logo"
+        tools:layout_editor_absoluteY="619dp"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/app_logo"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="7dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/line"
+        tools:layout_editor_absoluteY="668dp"
         tools:ignore="MissingConstraints" />
 
 
