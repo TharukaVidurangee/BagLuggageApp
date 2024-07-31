@@ -17,11 +17,25 @@
         app:srcCompat="@drawable/bag_tag"
         tools:ignore="MissingConstraints" />
 
+
     <ImageView
         android:id="@+id/imageView13"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="140dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/input_border"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="280dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,6 +43,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/input_border"
         tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:background="@null"
+        android:hint="@string/scanRoom"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView15"
+        app:layout_constraintEnd_toEndOf="@+id/imageView15"
+        app:layout_constraintStart_toStartOf="@+id/imageView15"
+        app:layout_constraintTop_toTopOf="@+id/imageView15" />
+
 
     <ImageView
         android:id="@+id/imageView14"
@@ -50,7 +76,7 @@
         android:layout_height="51dp"
         android:layout_marginStart="34dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="140dp"
         android:layout_marginBottom="19dp"
         android:layout_weight="1"
         android:entries="@array/room_numbers"
@@ -66,10 +92,11 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginStart="33dp"
+        android:layout_marginStart="38dp"
         android:layout_marginEnd="33dp"
         android:layout_marginBottom="5dp"
-        android:hint="Scan Bag tag Here"
+        android:hint="@string/scanBag"
+        android:background="@null"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView14"
         app:layout_constraintEnd_toEndOf="parent"
@@ -78,6 +105,40 @@
         app:layout_constraintTop_toTopOf="@+id/imageView14"
         tools:ignore="MissingConstraints" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView14"
+        app:layout_constraintVertical_bias="0.061" />
 
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView13"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fluent_line_horizontal_3_20_filled"
+        tools:ignore="SpeakableTextPresentCheck"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginTop="240dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

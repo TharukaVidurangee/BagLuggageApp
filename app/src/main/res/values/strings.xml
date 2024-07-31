@@ -12,6 +12,9 @@
     <string name="settings">Settings</string>
     <string name="logout">Logout</string>
 
+    <string name="scanBag">Scan Bag tag Here</string>
+    <string name="scanRoom">Scan Room</string>
+
     <string-array name="room_numbers">
         <item>Room No 101</item>
         <item>Room No 102</item>
