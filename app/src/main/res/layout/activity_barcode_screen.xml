@@ -45,6 +45,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
+        android:id="@+id/roomEditText"
         android:layout_width="90dp"
         android:layout_height="60dp"
         android:layout_marginStart="10dp"
@@ -89,20 +90,21 @@
 
 
     <EditText
-        android:id="@+id/textView"
+        android:id="@+id/tagEditText"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginStart="38dp"
         android:layout_marginEnd="33dp"
         android:layout_marginBottom="5dp"
-        android:hint="@string/scanBag"
         android:background="@null"
+        android:hint="@string/scanBag"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView14"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView14"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
 
     <View
@@ -131,11 +133,22 @@
         app:srcCompat="@drawable/fluent_line_horizontal_3_20_filled"
         tools:ignore="SpeakableTextPresentCheck"/>
 
+    <ImageView
+        android:id="@+id/saveButton"
+        android:layout_width="107dp"
+        android:layout_height="60dp"
+        tools:ignore="MissingConstraints"
+        android:src="@drawable/baseline_done_24"
+        tools:layout_editor_absoluteX="304dp"
+        tools:layout_editor_absoluteY="232dp" />
+
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tagRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="300dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
