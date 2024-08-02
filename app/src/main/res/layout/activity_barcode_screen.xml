@@ -7,16 +7,6 @@
     tools:context=".room_Select">
 
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="491dp"
-        android:layout_height="771dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/bag_tag"
-        tools:ignore="MissingConstraints" />
-
 
     <ImageView
         android:id="@+id/imageView13"
@@ -126,6 +116,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view01" />
+
     <Button
         android:id="@+id/open_drawer_button"
         android:layout_width="wrap_content"
@@ -137,6 +128,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

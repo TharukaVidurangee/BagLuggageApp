@@ -13,7 +13,7 @@ class LoginScreen : AppCompatActivity() {
         val loginButton: Button = findViewById(R.id.loginButton)
 
         loginButton.setOnClickListener {
-            val intent = Intent(this, barcode_screen::class.java)
+            val intent = Intent(this, ActivityDrawer::class.java)
             startActivity(intent)
         }
     }
