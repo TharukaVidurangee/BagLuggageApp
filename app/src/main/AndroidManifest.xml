@@ -18,19 +18,8 @@
             android:name=".BarcodeScreen"
             android:exported="false" />
         <activity
-            android:name=".Add_Tag"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity2"
-            android:exported="false" />
-        <activity
             android:name=".bag_history_screen"
             android:exported="false" />
-        <activity
-            android:name=".barcode_screen"
-            android:exported="false"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.AeroLuggage" />
         <activity
             android:name=".room_Select"
             android:exported="false" />
