@@ -15,6 +15,9 @@
         android:theme="@style/Theme.AeroLuggage"
         tools:targetApi="31">
         <activity
+            android:name=".BarcodeScreen"
+            android:exported="false" />
+        <activity
             android:name=".Add_Tag"
             android:exported="false" />
         <activity

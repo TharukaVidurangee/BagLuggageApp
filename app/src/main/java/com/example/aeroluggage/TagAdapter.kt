@@ -1,4 +1,4 @@
-package com.example.sqlitedbaeroluggage
+package com.example.aeroluggage
 
 import android.content.Context
 import android.content.Intent

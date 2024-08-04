@@ -1,161 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".room_Select">
-
-
-    <ImageView
-        android:id="@+id/imageView13"
-        android:layout_width="341dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="60dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/input_border"
-        tools:ignore="MissingConstraints" />
-
-
-    <ImageView
-        android:id="@+id/imageView14"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.521"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView13"
-        app:srcCompat="@drawable/white_input"
-        android:elevation="60dp"
-        tools:ignore="MissingConstraints" />
-
-
-
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="59dp"
-        android:layout_marginStart="38dp"
-        android:layout_marginEnd="38dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView13"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:entries="@array/room_numbers"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/roomEditText"
-        android:layout_width="264dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="108dp"
-        android:background="@null"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        android:textColor="@color/transparent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+    tools:context=".BarcodeScreen">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/bagTagheading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="80dp"
-        android:text="Bags In This Room"
-        android:textColor="@color/white"
+        android:layout_marginTop="16dp"
+        android:layout_alignParentTop="true"
         android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/view01"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView14" />
 
-    <View
-        android:id="@+id/view01"
+        android:text="Bag tags" />
+
+    <TextView
+        android:id="@+id/tagHeading"
+        android:layout_width="119dp"
+        android:layout_height="40dp"
+        android:text="Bag Tags"
+        android:textSize="24sp"
+        tools:ignore="MissingConstraints"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="16dp"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="26dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tagRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="135dp"
-        android:layout_marginEnd="20dp"
-        android:background="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView14" />
-
-    <EditText
-        android:id="@+id/tagEditText"
-        android:layout_width="340dp"
-        android:layout_height="60dp"
-        android:background="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView14"
-        app:layout_constraintEnd_toEndOf="@+id/imageView14"
-        app:layout_constraintHorizontal_bias="0.857"
-        app:layout_constraintStart_toStartOf="@+id/imageView14" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:padding="16dp" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="@color/orange"
         android:clickable="true"
         android:focusable="true"
+        android:text="add bag tag"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_width="300dp"
-        android:layout_height="59dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="200dp"
-        android:background="@drawable/orange_button"
-        android:text="@string/scan_bag_tag"
-        android:textSize="26sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.38"
         tools:ignore="DuplicateIds" />
 
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/tagRecyclerView"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view01" />
-
-    <Button
-        android:id="@+id/open_drawer_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:clickable="true"
-        android:focusable="true"
-        android:textColor="@android:color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="" />
-
-    <ImageView
-        android:id="@+id/saveButton"
-        android:layout_width="52dp"
-        android:layout_height="46dp"
-        android:layout_alignTop="@+id/open_drawer_button"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="7dp"
-        android:src="@drawable/baseline_save_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        android:layout_height="match_parent">
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:id="@+id/roomEditText"
+            android:layout_width="293dp"
+            android:layout_height="92dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="104dp"
+            android:background="@drawable/border"
+            android:hint="enter room no"
+            android:maxLines="1"
+            android:padding="12dp"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/tagEditText"
+            app:layout_constraintEnd_toEndOf="@+id/tagEditText"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/tagEditText"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/tagEditText"
+            android:layout_width="314dp"
+            android:layout_height="83dp"
+            android:layout_below="@+id/roomEditText"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/border"
+            android:hint="enter bag tag"
+            android:maxLines="1"
+            android:padding="12dp"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/roomEditText"
+            tools:ignore="MissingConstraints" />
+
+        <ImageView
+            android:id="@+id/saveButton"
+            android:layout_width="52dp"
+            android:layout_height="46dp"
+            android:src="@drawable/baseline_save_24"
+            tools:layout_editor_absoluteX="357dp"
+            tools:layout_editor_absoluteY="16dp"
+            tools:ignore="MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</RelativeLayout>
