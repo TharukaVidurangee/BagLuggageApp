@@ -3,7 +3,6 @@ package com.example.aeroluggage
 
 import android.content.ContentValues
 import android.content.Context
-import android.content.LocusId
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
@@ -75,7 +74,7 @@ class TagDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_N
         db.close()
     }
 
-    fun getTagByID(tagId: Int): Tag{
+    fun getTagByID(tagId: Int): Tag {
         val db = readableDatabase
         val query = "SELECT * FROM $TABLE_NAME WHERE $COLUMN_ID = $tagId"
         val cursor = db.rawQuery(query, null)

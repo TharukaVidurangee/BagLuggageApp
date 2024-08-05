@@ -1,7 +1,6 @@
 package com.example.aeroluggage
 
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,9 +8,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.example.aeroluggage.R
-import com.example.aeroluggage.Tag
-import com.example.aeroluggage.TagDatabaseHelper
 
 class TagAdapter(private var tags:List<Tag>, context: Context) :
     RecyclerView.Adapter<TagAdapter.TagViewHolder>() {

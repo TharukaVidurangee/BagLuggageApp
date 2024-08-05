@@ -1,34 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".BarcodeScreen">
-
-    <TextView
-        android:id="@+id/bagTagheading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_alignParentTop="true"
-        android:textSize="30sp"
-
-        android:text="Bag tags" />
-
-    <TextView
-        android:id="@+id/tagHeading"
-        android:layout_width="119dp"
-        android:layout_height="40dp"
-        android:text="Bag Tags"
-        android:textSize="24sp"
-        tools:ignore="MissingConstraints"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="16dp"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="26dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/tagRecyclerView"
@@ -103,9 +80,9 @@
             android:layout_width="52dp"
             android:layout_height="46dp"
             android:src="@drawable/baseline_save_24"
+            tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="357dp"
-            tools:layout_editor_absoluteY="16dp"
-            tools:ignore="MissingConstraints" />
+            tools:layout_editor_absoluteY="16dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
