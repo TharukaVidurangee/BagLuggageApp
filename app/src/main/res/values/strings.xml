@@ -14,8 +14,12 @@
 
     <string name="scanBag">Scan Bag tag Here</string>
     <string name="scanRoom">Scan Room</string>
+    <string name="user">Saman Kumara</string>
+    <string name="flightNo">ST2122</string>
+    <string name="scan_bag_tag">Scan Bag Tag</string>
 
     <string-array name="room_numbers">
+        <item> </item>
         <item>Room No 101</item>
         <item>Room No 102</item>
         <item>Room No 103</item>
@@ -26,4 +30,9 @@
         <item>Room No 302</item>
         <item>Room No 303</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="info_sign_bg">info sign background</string>
+    <string name="settings_logo_bg">Settings logo bg</string>
 </resources>
