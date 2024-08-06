@@ -15,76 +15,125 @@
             android:id="@+id/roomEditText"
             android:layout_width="264dp"
             android:layout_height="51dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
             android:layout_marginTop="48dp"
             android:layout_marginEnd="108dp"
-            android:layout_marginBottom="104dp"
             android:background="@null"
             android:ems="10"
-            android:hint="enter room no"
             android:inputType="text"
-            android:maxLines="1"
-            android:padding="12dp"
-            android:text="Name"
+            android:text="Select Room"
             android:textColor="@color/transparent"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/tagEditText"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="@+id/tagEditText"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView13"
+            android:layout_width="341dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="44dp"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/input_border"
+            tools:ignore="MissingConstraints" />
+
+        <ImageView
+            android:id="@+id/imageView14"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:elevation="60dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView13"
+            app:srcCompat="@drawable/white_input"
             tools:ignore="MissingConstraints" />
 
         <EditText
             android:id="@+id/tagEditText"
-            android:layout_width="314dp"
-            android:layout_height="83dp"
-            android:layout_below="@+id/roomEditText"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/border"
+            android:layout_width="340dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="8dp"
+            android:background="@null"
             android:hint="enter bag tag"
-            android:maxLines="1"
-            android:padding="12dp"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/roomEditText"
-            tools:ignore="MissingConstraints" />
+            android:textSize="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView14"
+            app:layout_constraintEnd_toEndOf="@+id/imageView14"
+            app:layout_constraintHorizontal_bias="0.857"
+            app:layout_constraintStart_toStartOf="@+id/imageView14"
+            tools:ignore="UnknownIdInLayout" />
 
-        <ImageView
-            android:id="@+id/saveButton"
-            android:layout_width="52dp"
-            android:layout_height="46dp"
-            android:src="@drawable/baseline_save_24"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="357dp"
-            tools:layout_editor_absoluteY="16dp" />
 
         <Spinner
             android:id="@+id/textId"
-            android:layout_width="129dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:layout_marginStart="38dp"
+            android:layout_marginEnd="38dp"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <ImageButton
+            android:id="@+id/saveButton"
+            android:layout_width="52dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="343dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="69dp"
+            android:src="@drawable/baseline_save_24"
+            app:layout_constraintBottom_toTopOf="@+id/view01"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/roomEditText"
             tools:ignore="MissingConstraints" />
+
+        <View
+            android:id="@+id/view01"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="124dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView14" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="80dp"
+            android:text="Bags In This Room"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/view01"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView14"
+            app:layout_constraintVertical_bias="0.0" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/tagRecyclerView"
+        android:padding="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="300dp"
         android:layout_marginStart="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        android:padding="16dp" />
+
+        />
+
 
 </RelativeLayout>

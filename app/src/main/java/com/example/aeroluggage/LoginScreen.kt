@@ -54,7 +54,7 @@ class LoginScreen : AppCompatActivity() {
                     val user = response.body()
                     if (user != null && user.ReturnCode == "success") {
                         // Navigate to BarcodeScreen
-                        val intent = Intent(this@LoginScreen, BarcodeScreen::class.java)
+                        val intent = Intent(this@LoginScreen, ActivityDrawer::class.java)
                         startActivity(intent)
                     } else {
                         Toast.makeText(this@LoginScreen, "Invalid username or password", Toast.LENGTH_SHORT).show()
