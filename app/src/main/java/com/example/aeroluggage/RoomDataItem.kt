@@ -1,5 +1,3 @@
-package com.example.aeroluggage
-
 data class RoomDataItem(
     val AddedDate: String,
     val AddedTime: Int,
