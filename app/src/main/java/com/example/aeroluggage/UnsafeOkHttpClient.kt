@@ -7,6 +7,7 @@ import javax.net.ssl.SSLContext
 import javax.net.ssl.TrustManager
 import javax.net.ssl.X509TrustManager
 
+
 object UnsafeOkHttpClient {
     fun getUnsafeOkHttpClient(): OkHttpClient {
         return try {

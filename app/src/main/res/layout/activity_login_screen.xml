@@ -36,8 +36,7 @@
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:layout_width="340dp"
         android:layout_height="60dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="292dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/input_border"
         android:drawableStart="@drawable/ic_user"
         android:drawablePadding="16dp"
@@ -50,8 +49,8 @@
         android:singleLine="true"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 

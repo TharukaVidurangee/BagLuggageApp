@@ -7,52 +7,35 @@
     android:layout_height="match_parent"
     tools:context=".BarcodeScreen">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/tagRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
-        android:padding="16dp" />
 
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/addButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/orange"
-        android:clickable="true"
-        android:focusable="true"
-        android:text="add bag tag"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="DuplicateIds" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
         <EditText
             android:id="@+id/roomEditText"
-            android:layout_width="293dp"
-            android:layout_height="92dp"
+            android:layout_width="264dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="108dp"
+            android:background="@null"
+            android:ems="10"
+            android:inputType="text"
+            android:text="Name"
+            android:textColor="@color/transparent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_marginBottom="104dp"
-            android:background="@drawable/border"
             android:hint="enter room no"
             android:maxLines="1"
             android:padding="12dp"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/tagEditText"
-            app:layout_constraintEnd_toEndOf="@+id/tagEditText"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="@+id/tagEditText"
-            app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />
 
         <EditText
@@ -83,7 +66,20 @@
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="357dp"
             tools:layout_editor_absoluteY="16dp" />
+
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tagRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:padding="16dp" />
 
 
 </RelativeLayout>
