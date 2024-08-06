@@ -3,6 +3,7 @@ package com.example.aeroluggage
 import RoomDataItem
 import android.os.Bundle
 import android.util.Log
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -74,8 +75,8 @@ class BarcodeScreen : AppCompatActivity() {
                 if (response.isSuccessful) {
                     val roomData = response.body()
                     if (roomData != null) {
-                        val roomLabels = roomData.joinToString(separator = "\n") { it.CheckLabel }
-                        binding.textId.text = roomLabels
+                        val roomLabels = roomData.map { it.CheckLabel }
+                        setupSpinner(roomLabels)
                     } else {
                         Log.e("BarcodeScreen", "Response body is null")
                         Toast.makeText(this@BarcodeScreen, "No room labels found", Toast.LENGTH_SHORT).show()
@@ -91,6 +92,12 @@ class BarcodeScreen : AppCompatActivity() {
                 Toast.makeText(this@BarcodeScreen, "Failed to fetch room labels", Toast.LENGTH_SHORT).show()
             }
         })
+    }
+
+    private fun setupSpinner(labels: List<String>) {
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, labels)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        binding.textId.adapter = adapter
     }
 
     private fun getUnsafeOkHttpClient(): OkHttpClient {
