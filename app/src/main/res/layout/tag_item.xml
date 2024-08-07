@@ -5,27 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="110dp"
     app:cardElevation="4dp"
-    android:layout_margin="8dp"
+    android:layout_margin="4dp"
     app:cardCornerRadius="8dp">
 
     <LinearLayout
         android:id="@+id/view_foreground"
-        android:visibility="visible"
-        android:background="@color/white"
-        android:layout_margin="4dp"
-        android:orientation="horizontal"
-        android:layout_gravity="center_vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="4dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:visibility="visible">
 
         <ImageView
             android:id="@+id/image"
-            android:scaleType="fitXY"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/bag_done_synced"
-            android:layout_margin="8dp"
             android:layout_width="40dp"
-            android:layout_height="60dp" />
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="8dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/bag_done_synced" />
 
         <LinearLayout
             android:layout_width="200dp"
@@ -54,8 +54,10 @@
             <TextView
                 android:id="@+id/roomTextView"
                 android:layout_width="137dp"
+                android:gravity="center_vertical|start"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
+                android:layout_marginLeft="10dp"
                 android:text="room no"
                 android:textSize="16dp" />
         </LinearLayout>
@@ -71,5 +73,13 @@
 
     </LinearLayout>
 
-
+    <TextView
+        android:id="@+id/dateTimeTextView"
+        android:layout_width="146dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="8dp"
+        android:text="DateTime"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="14sp" />
 </androidx.cardview.widget.CardView>

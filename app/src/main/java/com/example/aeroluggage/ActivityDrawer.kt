@@ -33,8 +33,7 @@ class ActivityDrawer : AppCompatActivity() {
             it.isChecked = true
 
             when (it.itemId) {
-
-                R.id.home -> replaceFragment(HomeFragment(), it.title.toString())
+                //R.id.home -> replaceFragment(HomeFragment(), it.title.toString())
                 R.id.nav_history -> replaceFragment(HistoryFragment(), it.title.toString())
                 R.id.nav_info -> replaceFragment(InfoFragment(), it.title.toString())
                 R.id.nav_settings -> replaceFragment(SettingsFragment(), it.title.toString())

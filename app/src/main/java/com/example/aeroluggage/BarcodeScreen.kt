@@ -4,6 +4,7 @@ import RoomDataItem
 import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,7 +16,10 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import okhttp3.OkHttpClient
 import java.security.cert.CertificateException
+import java.security.cert.X509Certificate
 import javax.net.ssl.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class BarcodeScreen : AppCompatActivity() {
 
@@ -48,14 +52,15 @@ class BarcodeScreen : AppCompatActivity() {
 
         // Handle save button click
         binding.saveButton.setOnClickListener {
-            val room = binding.roomEditText.text.toString()
             val bagtag = binding.tagEditText.text.toString()
+            val room = binding.roomEditText.text.toString()
             if (room.isNotEmpty() && bagtag.isNotEmpty()) {
-                val tag = Tag(0, room, bagtag)
+                val dateTime = getCurrentDateTime()
+                val tag = Tag(0, bagtag, room, dateTime)
                 db.insertTag(tag)
                 tagAdapter.refreshData(db.getAllTags())
-                binding.roomEditText.text.clear()
                 binding.tagEditText.text.clear()
+                binding.roomEditText.text.clear()
                 Toast.makeText(this, "Bag Tag saved", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
@@ -76,7 +81,7 @@ class BarcodeScreen : AppCompatActivity() {
                     val roomData = response.body()
                     if (roomData != null) {
                         val roomLabels = roomData.map { it.CheckLabel }
-                        setupSpinner(roomLabels)
+                        setupAutoCompleteTextView(roomLabels)
                     } else {
                         Log.e("BarcodeScreen", "Response body is null")
                         Toast.makeText(this@BarcodeScreen, "No room labels found", Toast.LENGTH_SHORT).show()
@@ -94,28 +99,38 @@ class BarcodeScreen : AppCompatActivity() {
         })
     }
 
-    private fun setupSpinner(labels: List<String>) {
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, labels)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        binding.textId.adapter = adapter
+    private fun setupAutoCompleteTextView(labels: List<String>) {
+        val adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, labels)
+        val roomEditText = findViewById<AutoCompleteTextView>(R.id.roomEditText)
+        roomEditText.setAdapter(adapter)
+        roomEditText.threshold = 1 // Start showing suggestions after 1 character
     }
 
+    // Get the current date and time as a formatted string
+    private fun getCurrentDateTime(): String {
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
+        return dateFormat.format(Date())
+    }
+
+    // Trust all certificates (Unsafe)
     private fun getUnsafeOkHttpClient(): OkHttpClient {
         return try {
-            val trustAllCerts = arrayOf<TrustManager>(object : X509TrustManager {
-                @Throws(CertificateException::class)
-                override fun checkClientTrusted(chain: Array<java.security.cert.X509Certificate>, authType: String) {
-                }
+            // Create a trust manager that does not validate certificate chains
+            val trustAllCerts = arrayOf<TrustManager>(
+                object : X509TrustManager {
+                    override fun checkClientTrusted(chain: Array<X509Certificate>, authType: String) {
+                    }
 
-                @Throws(CertificateException::class)
-                override fun checkServerTrusted(chain: Array<java.security.cert.X509Certificate>, authType: String) {
-                }
+                    override fun checkServerTrusted(chain: Array<X509Certificate>, authType: String) {
+                    }
 
-                override fun getAcceptedIssuers(): Array<java.security.cert.X509Certificate> {
-                    return arrayOf()
+                    override fun getAcceptedIssuers(): Array<X509Certificate> {
+                        return arrayOf()
+                    }
                 }
-            })
+            )
 
+            // Install the all-trusting trust manager
             val sslContext = SSLContext.getInstance("SSL")
             sslContext.init(null, trustAllCerts, java.security.SecureRandom())
             val sslSocketFactory = sslContext.socketFactory
@@ -127,10 +142,5 @@ class BarcodeScreen : AppCompatActivity() {
         } catch (e: Exception) {
             throw RuntimeException(e)
         }
-    }
-
-    override fun onResume() {
-        super.onResume()
-        tagAdapter.refreshData(db.getAllTags())
     }
 }
