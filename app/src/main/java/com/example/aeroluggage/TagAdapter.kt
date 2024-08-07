@@ -9,7 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
-class TagAdapter(private var tags: List<Tag>, context: Context) :
+class TagAdapter(private var tags: List<Tag>, private val context: Context) :
     RecyclerView.Adapter<TagAdapter.TagViewHolder>() {
 
     private var db: TagDatabaseHelper = TagDatabaseHelper(context)
@@ -38,6 +38,10 @@ class TagAdapter(private var tags: List<Tag>, context: Context) :
             db.deleteTag(tag.id)
             refreshData(db.getAllTags())
             Toast.makeText(holder.itemView.context, "Tag deleted", Toast.LENGTH_SHORT).show()
+        }
+
+        holder.itemView.setOnClickListener {
+            (context as BarcodeScreen).syncTag(tag)
         }
     }
 

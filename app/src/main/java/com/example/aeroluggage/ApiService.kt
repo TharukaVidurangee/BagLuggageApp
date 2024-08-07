@@ -19,9 +19,10 @@ interface ApiService {
     @GET("Easypass_revamp/Home/GetStorageRoomList") // Ensure this is the correct endpoint
     fun getStorageRoomList(): Call<List<RoomDataItem>>
 
-    @POST("")     //To sync data from the local SQLite DB to the central DB
+    @POST("Easypass_revamp/StorageRoom/SaveStorageRoomBag")     //To sync data from the local SQLite DB to the central DB
     fun syncData(@Body syncData: SyncData): Call<SyncData>
 }
+
 
 
 

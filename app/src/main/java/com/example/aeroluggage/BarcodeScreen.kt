@@ -93,54 +93,82 @@ class BarcodeScreen : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<List<RoomDataItem>>, t: Throwable) {
-                Log.e("BarcodeScreen", "API call failed: ${t.message}", t)
+                Log.e("BarcodeScreen", "Fetch failed: ${t.message}", t)
                 Toast.makeText(this@BarcodeScreen, "Failed to fetch room labels", Toast.LENGTH_SHORT).show()
             }
         })
     }
 
-    private fun setupAutoCompleteTextView(labels: List<String>) {
-        val adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, labels)
-        val roomEditText = findViewById<AutoCompleteTextView>(R.id.roomEditText)
-        roomEditText.setAdapter(adapter)
-        roomEditText.threshold = 1 // Start showing suggestions after 1 character
+    private fun setupAutoCompleteTextView(roomLabels: List<String>) {
+        val adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, roomLabels)
+        (binding.roomEditText as AutoCompleteTextView).setAdapter(adapter)
     }
 
-    // Get the current date and time as a formatted string
-    private fun getCurrentDateTime(): String {
-        val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
-        return dateFormat.format(Date())
-    }
+    fun syncTag(tag: Tag) {
+        val syncData = SyncData(
+            AddedDate = getCurrentDateTime(), // Adjust according to your data needs
+            AddedTime = System.currentTimeMillis().toInt(), // Example conversion
+            AddedUser = "User", // Replace with actual user or context
+            BagTag = tag.bagtag,
+            CheckId = "", // Provide actual data if available
+            CheckLabel = "", // Provide actual data if available
+            EndDate = "", // Provide actual data if available
+            LastUpdatedDate = getCurrentDateTime(), // Example date
+            LastUpdatedUser = "User", // Replace with actual user or context
+            ReturnCode = "", // Provide actual data if available
+            StorageRoom = tag.room,
+            SyncDate = getCurrentDateTime(), // Current date-time
+            TransId = tag.id,
+            ValidPeriod = "" // Provide actual data if available
+        )
 
-    // Trust all certificates (Unsafe)
-    private fun getUnsafeOkHttpClient(): OkHttpClient {
-        return try {
-            // Create a trust manager that does not validate certificate chains
-            val trustAllCerts = arrayOf<TrustManager>(
-                object : X509TrustManager {
-                    override fun checkClientTrusted(chain: Array<X509Certificate>, authType: String) {
-                    }
-
-                    override fun checkServerTrusted(chain: Array<X509Certificate>, authType: String) {
-                    }
-
-                    override fun getAcceptedIssuers(): Array<X509Certificate> {
-                        return arrayOf()
-                    }
+        apiService.syncData(syncData).enqueue(object : Callback<SyncData> {
+            override fun onResponse(call: Call<SyncData>, response: Response<SyncData>) {
+                if (response.isSuccessful) {
+                    Toast.makeText(this@BarcodeScreen, "Tag synced successfully", Toast.LENGTH_SHORT).show()
+                    db.deleteTag(tag.id)
+                    tagAdapter.refreshData(db.getAllTags())
+                } else {
+                    Log.e("BarcodeScreen", "Sync error: ${response.errorBody()?.string()}")
+                    Toast.makeText(this@BarcodeScreen, "Error syncing tag", Toast.LENGTH_SHORT).show()
                 }
-            )
+            }
 
-            // Install the all-trusting trust manager
-            val sslContext = SSLContext.getInstance("SSL")
+            override fun onFailure(call: Call<SyncData>, t: Throwable) {
+                Log.e("BarcodeScreen", "Sync failed: ${t.message}", t)
+                Toast.makeText(this@BarcodeScreen, "Failed to sync tag", Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
+
+    private fun getCurrentDateTime(): String {
+        val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
+        return sdf.format(Date())
+    }
+
+    private fun getUnsafeOkHttpClient(): OkHttpClient {
+        val builder = OkHttpClient.Builder()
+        try {
+            val trustAllCerts = arrayOf<TrustManager>(object : X509TrustManager {
+                @Throws(CertificateException::class)
+                override fun checkClientTrusted(chain: Array<out X509Certificate>?, authType: String?) {
+                }
+
+                @Throws(CertificateException::class)
+                override fun checkServerTrusted(chain: Array<out X509Certificate>?, authType: String?) {
+                }
+
+                override fun getAcceptedIssuers(): Array<X509Certificate>? {
+                    return null
+                }
+            })
+            val sslContext = SSLContext.getInstance("TLS")
             sslContext.init(null, trustAllCerts, java.security.SecureRandom())
-            val sslSocketFactory = sslContext.socketFactory
-
-            val builder = OkHttpClient.Builder()
-            builder.sslSocketFactory(sslSocketFactory, trustAllCerts[0] as X509TrustManager)
-            builder.hostnameVerifier { _, _ -> true }
-            builder.build()
+            builder.sslSocketFactory(sslContext.socketFactory, trustAllCerts[0] as X509TrustManager)
         } catch (e: Exception) {
             throw RuntimeException(e)
         }
+        builder.hostnameVerifier { _, _ -> true }
+        return builder.build()
     }
 }
