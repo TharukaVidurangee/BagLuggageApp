@@ -89,4 +89,29 @@
         android:text="DateTime"
         android:textColor="@android:color/darker_gray"
         android:textSize="14sp" />
+
+    <!-- Hidden layout for swipe actions -->
+    <LinearLayout
+        android:id="@+id/swipeActionsLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/deleteButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Delete"
+            android:textColor="@android:color/white"
+            android:background="@android:color/holo_red_dark" />
+
+        <Button
+            android:id="@+id/syncButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Sync"
+            android:textColor="@android:color/white"
+            android:background="@android:color/holo_blue_dark" />
+    </LinearLayout>
 </androidx.cardview.widget.CardView>

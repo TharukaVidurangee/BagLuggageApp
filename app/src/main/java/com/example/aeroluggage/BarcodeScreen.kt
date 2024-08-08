@@ -113,42 +113,7 @@ class BarcodeScreen : AppCompatActivity() {
         (binding.roomEditText as AutoCompleteTextView).setAdapter(adapter)
     }
 
-    fun syncTag(tag: Tag) {
-        val syncData = SyncData(
-            AddedDate = getCurrentDateTime(), // Adjust according to your data needs
-            AddedTime = System.currentTimeMillis().toInt(), // Example conversion
-            AddedUser = "User", // Replace with actual user or context
-            BagTag = tag.bagtag,
-            CheckId = "", // Provide actual data if available
-            CheckLabel = "", // Provide actual data if available
-            EndDate = "", // Provide actual data if available
-            LastUpdatedDate = getCurrentDateTime(), // Example date
-            LastUpdatedUser = "User", // Replace with actual user or context
-            ReturnCode = "", // Provide actual data if available
-            StorageRoom = tag.room,
-            SyncDate = getCurrentDateTime(), // Current date-time
-            TransId = tag.id,
-            ValidPeriod = "" // Provide actual data if available
-        )
 
-        apiService.syncData(syncData).enqueue(object : Callback<SyncData> {
-            override fun onResponse(call: Call<SyncData>, response: Response<SyncData>) {
-                if (response.isSuccessful) {
-                    Toast.makeText(this@BarcodeScreen, "Tag synced successfully", Toast.LENGTH_SHORT).show()
-                    db.deleteTag(tag.id)
-                    tagAdapter.refreshData(db.getAllTags())
-                } else {
-                    Log.e("BarcodeScreen", "Sync error: ${response.errorBody()?.string()}")
-                    Toast.makeText(this@BarcodeScreen, "Error syncing tag", Toast.LENGTH_SHORT).show()
-                }
-            }
-
-            override fun onFailure(call: Call<SyncData>, t: Throwable) {
-                Log.e("BarcodeScreen", "Sync failed: ${t.message}", t)
-                Toast.makeText(this@BarcodeScreen, "Failed to sync tag", Toast.LENGTH_SHORT).show()
-            }
-        })
-    }
 
     private fun getCurrentDateTime(): String {
         val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())

@@ -16,12 +16,11 @@ class TagDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_N
         private const val COLUMN_TAG = "bagtag"
         private const val COLUMN_ROOM = "room"
         private const val COLUMN_DATE_TIME = "dateTime"
-        private const val COLUMN_IS_SYNC = "isSync"
-        private const val COLUMN_USERID = "userId"
+
     }
 
     override fun onCreate(db: SQLiteDatabase?) {
-        val createTableQuery = "CREATE TABLE $TABLE_NAME ($COLUMN_ID INTEGER PRIMARY KEY, $COLUMN_TAG TEXT, $COLUMN_ROOM TEXT, $COLUMN_DATE_TIME TEXT, $COLUMN_IS_SYNC BOOLEAN, $COLUMN_USERID TEXT)"
+        val createTableQuery = "CREATE TABLE $TABLE_NAME ($COLUMN_ID INTEGER PRIMARY KEY, $COLUMN_TAG TEXT, $COLUMN_ROOM TEXT)"
         db?.execSQL(createTableQuery)
     }
 
@@ -37,7 +36,6 @@ class TagDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_N
             put(COLUMN_TAG, tag.bagtag)
             put(COLUMN_ROOM, tag.room)
             put(COLUMN_DATE_TIME, tag.dateTime)
-            put(COLUMN_IS_SYNC, false)
         }
         db.insert(TABLE_NAME, null, values)
         db.close()
@@ -63,19 +61,7 @@ class TagDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_N
         return tagsList
     }
 
-    fun updateTag(tag: Tag) {
-        val db = writableDatabase
-        val values = ContentValues().apply {
-            put(COLUMN_TAG, tag.bagtag)
-            put(COLUMN_ROOM, tag.room)
-            put(COLUMN_DATE_TIME, tag.dateTime)
 
-        }
-        val whereClause = "$COLUMN_ID = ?"
-        val whereArgs = arrayOf(tag.id.toString())
-        db.update(TABLE_NAME, values, whereClause, whereArgs)
-        db.close()
-    }
 
     fun deleteTag(tagId: Int) {
         val db = writableDatabase

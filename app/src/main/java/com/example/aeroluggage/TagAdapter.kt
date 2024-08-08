@@ -41,9 +41,7 @@ class TagAdapter(private var tags: List<Tag>, private val context: Context) :
             Toast.makeText(holder.itemView.context, "Tag deleted", Toast.LENGTH_SHORT).show()
         }
 
-        holder.itemView.setOnClickListener {
-            (context as BarcodeScreen).syncTag(tag)
-        }
+
     }
 
     fun refreshData(newTags: List<Tag>) {
