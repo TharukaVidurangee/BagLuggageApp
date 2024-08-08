@@ -1,6 +1,7 @@
 package com.example.aeroluggage
 
 import RoomDataItem
+import Tag
 import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
@@ -42,6 +43,9 @@ class BarcodeScreen : AppCompatActivity() {
 
         apiService = retrofit.create(ApiService::class.java)
 
+        //Initialize Retrofit and ApiService to Sync data to the central database
+
+
         // Initialize database and adapter
         db = TagDatabaseHelper(this)
         tagAdapter = TagAdapter(db.getAllTags(), this)
@@ -69,7 +73,12 @@ class BarcodeScreen : AppCompatActivity() {
 
         // Fetch room data
         fetchRoomData()
+
+        //to sync data to the central DB
+
     }
+
+
 
     private fun fetchRoomData() {
         apiService.getStorageRoomList().enqueue(object : Callback<List<RoomDataItem>> {

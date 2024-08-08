@@ -28,7 +28,7 @@
             android:src="@drawable/bag_done_synced" />
 
         <LinearLayout
-            android:layout_width="200dp"
+            android:layout_width="167dp"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
@@ -54,13 +54,21 @@
             <TextView
                 android:id="@+id/roomTextView"
                 android:layout_width="137dp"
-                android:gravity="center_vertical|start"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"
+                android:gravity="center_vertical|start"
                 android:text="room no"
                 android:textSize="16dp" />
         </LinearLayout>
+
+        <ImageView
+            android:id="@+id/syncButton"
+            android:layout_width="50dp"
+            android:layout_height="28dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="40dp"
+            android:src="@drawable/baseline_sync_24" />
 
         <ImageView
             android:id="@+id/deleteButton"
@@ -69,7 +77,6 @@
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="40dp"
             android:src="@drawable/baseline_delete_24" />
-
 
     </LinearLayout>
 
